@@ -1,6 +1,6 @@
 this is a php crud class for mysql using pdo.
 
-features: 
+features: <br>
 *create table row<br>
 *update table row<br>
 *delete table row<br>
