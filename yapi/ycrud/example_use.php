@@ -36,5 +36,7 @@ echo "<br><br>";
 //get_by_id example
 $all_users = $users_table->get_all();
 print_r($all_users);
-
+//get where
+$get_smolik = $users_table->get_where("name=smolik");
+print_r($get_smolik);
 ?>
