@@ -111,6 +111,25 @@
 			return $rows;
 		}
 	}//end get_all
+	public function get_where($where) 
+	{
+		if(!isset($where)) {return false;}//no id exit
+		
+		
+		$query = "SELECT * FROM " . $this->table ." WHERE " .$where;
+		
+		//preper statment
+		$stmt = $this->_db->prepare($query);
+		//execute
+		$stmt->execute();
+		
+		if ($stmt->rowCount() > 0) 
+		{
+			//get rows
+			$rows = $stmt->fetchAll();
+			return $rows;
+		}
+	}//end
 }//end ycrud
  
 
