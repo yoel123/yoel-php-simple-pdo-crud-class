@@ -6,6 +6,7 @@ features: <br>
 *delete table row<br>
 *get table row by id<br>
 *get all table rows<br>
+*get where<br>
 
 
 <b>how to use</b>: edit constants in config.php(your mysql connection details)
