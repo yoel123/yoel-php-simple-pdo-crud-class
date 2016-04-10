@@ -33,7 +33,7 @@ $singl_user = $users_table->get_by_id($id);
 print_r($singl_user);
 echo "<br><br>";
 
-//get_by_id example
+//get_all example
 $all_users = $users_table->get_all();
 print_r($all_users);
 
