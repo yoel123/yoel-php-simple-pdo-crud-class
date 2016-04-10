@@ -48,7 +48,7 @@
 			$update  .= $sep."`" . $key . "` = '".$value."' ";
 			$sep = ',';
 		}
-		//update user to active
+	
 		$query = "UPDATE  " . $this->table . " SET  $update  WHERE " . $this->pk . " =$id ";
 		//preper statment
 		$stmt = $this->_db->prepare($query);
