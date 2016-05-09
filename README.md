@@ -8,6 +8,11 @@ features: <br>
 *get all table rows<br>
 *get where<br>
 
+edit:<br>
+add a public attribute for debug.<br>
+*last_query
+
+
 
 <b>how to use</b>: edit constants in config.php(your mysql connection details)
  and see example_use.php .
