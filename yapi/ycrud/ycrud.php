@@ -5,6 +5,7 @@
 	protected $_db;       
 	protected $table; 
     protected $pk;//Primary Key of the Table	
+	public $last_query;//Primary Key of the Table	
  
     
 	public function __construct(PDO $db,$table) 
@@ -32,6 +33,8 @@
 		$query = "INSERT INTO ".$this->table." (".$cols.") VALUES (".$vals.")";
 		//preper statment
 		$stmt = $this->_db->prepare($query);
+		//echo $query;
+		$this->last_query = $query;//for debug
 		//execute
 		$stmt->execute();
 		return $stmt;
@@ -48,10 +51,12 @@
 			$update  .= $sep."`" . $key . "` = '".$value."' ";
 			$sep = ',';
 		}
-	
+		//update user to active
 		$query = "UPDATE  " . $this->table . " SET  $update  WHERE " . $this->pk . " =$id ";
 		//preper statment
 		$stmt = $this->_db->prepare($query);
+		
+		$this->last_query = $query;//for debug
 		//execute
 		$stmt->execute();
 		return $stmt;
@@ -67,6 +72,7 @@
 		
 		//preper statment
 		$stmt = $this->_db->prepare($query);
+		$this->last_query = $query;//for debug
 		//execute
 		$stmt->execute();
 		
@@ -84,6 +90,7 @@
 		
 		//preper statment
 		$stmt = $this->_db->prepare($query);
+		$this->last_query = $query;//for debug
 		//execute
 		$stmt->execute();
 		
@@ -101,6 +108,7 @@
 		
 		//preper statment
 		$stmt = $this->_db->prepare($query);
+		$this->last_query = $query;//for debug
 		//execute
 		$stmt->execute();
 		
@@ -120,6 +128,7 @@
 		
 		//preper statment
 		$stmt = $this->_db->prepare($query);
+		$this->last_query = $query;//for debug
 		//execute
 		$stmt->execute();
 		
