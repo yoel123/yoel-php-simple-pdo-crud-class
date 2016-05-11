@@ -138,7 +138,25 @@
 			$rows = $stmt->fetchAll();
 			return $rows;
 		}
-	}//end
+	}//end get_where
+	
+	public function query($q) 
+	{
+			$query = $q;
+		
+		//preper statment
+		$stmt = $this->_db->prepare($query);
+		$this->last_query = $query;//for debug
+		//execute
+		$stmt->execute();
+		
+		if ($stmt->rowCount() > 0) 
+		{
+			//get rows
+			$rows = $stmt->fetchAll();
+			return $rows;
+		}
+	}//end query
 }//end ycrud
  
 
