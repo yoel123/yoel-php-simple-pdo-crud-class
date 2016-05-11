@@ -10,7 +10,8 @@ features: <br>
 
 edit:<br>
 add a public attribute for debug.<br>
-*last_query
+*last_query [attributte]
+*query() [method for calling any sql query, like a join or somthing else]
 
 
 
